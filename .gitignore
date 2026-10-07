@@ -1,0 +1,80 @@
+# ==========================================
+# api_ativador - Git Ignore
+# ==========================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# --- Ambientes Virtuais ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Variáveis de Ambiente ---
+.env
+*.env
+!.env.example
+
+# --- Banco de Dados SQLite ---
+*.db
+*.db-journal
+*.sqlite3
+*.sqlite3-journal
+
+# --- Frontend React ---
+#frontend-admin/
+
+# --- IDEs / Editores ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Logs / Cobertura ---
+*.log
+htmlcov/
+.coverage
+.pytest_cache/
+
+# --- Pastas Locais / Backups ---
+BKP ERP/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Build / Dependências
+node_modules
+dist
+dist-ssr
+*.local
+.eslintcache
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
