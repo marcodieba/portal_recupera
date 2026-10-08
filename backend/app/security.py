@@ -2,8 +2,8 @@
 import base64
 import json
 import re
-from datetime import datetime
-
+import hashlib
+from datetime import datetime, timezone
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 from fastapi import Depends, Header, HTTPException
@@ -20,6 +20,12 @@ def load_public_key() -> Ed25519PublicKey:
         pem_str = pem_str.replace("-----BEGIN PUBLIC KEY-----", "-----BEGIN PUBLIC KEY-----\n")
         pem_str = pem_str.replace("-----END PUBLIC KEY-----", "\n-----END PUBLIC KEY-----")
     return serialization.load_pem_public_key(pem_str.encode("utf-8"))
+
+def sha256(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+def agora() -> datetime:
+    return datetime.now(timezone.utc)
 
 def verificar_licenca(licenca_json: str) -> dict:
     try:
