@@ -3,13 +3,14 @@ import base64
 import json
 import re
 import hashlib
+import secrets
 from datetime import datetime, timezone
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 from fastapi import Depends, Header, HTTPException
 from sqlalchemy.orm import Session
 
-from app.config import PUBLIC_KEY_PEM
+from app.config import PUBLIC_KEY_PEM, MASTER_KEY
 from app.database import get_db, Loja
 
 def load_public_key() -> Ed25519PublicKey:
@@ -23,6 +24,13 @@ def load_public_key() -> Ed25519PublicKey:
 
 def sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+def nova_api_key() -> str:
+    return "pk_" + secrets.token_hex(16)
+
+def exigir_master(x_master_key: str = Header(..., alias="X-Master-Key")):
+    if not MASTER_KEY or x_master_key != MASTER_KEY:
+        raise HTTPException(status_code=403, detail="Chave mestre inválida.")
 
 def agora() -> datetime:
     return datetime.now(timezone.utc)
@@ -89,5 +97,3 @@ def loja_autenticada(
         
     return loja
 
-def agora() -> datetime:
-    return datetime.utcnow()
