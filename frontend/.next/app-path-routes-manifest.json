@@ -1,0 +1,8 @@
+{
+  "/[alias]/page": "/[alias]",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/p/[token]/page": "/p/[token]",
+  "/page": "/"
+}

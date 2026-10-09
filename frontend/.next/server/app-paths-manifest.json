@@ -1,0 +1,8 @@
+{
+  "/[alias]/page": "app/[alias]/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/p/[token]/page": "app/p/[token]/page.js",
+  "/page": "app/page.js"
+}

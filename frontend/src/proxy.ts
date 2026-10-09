@@ -19,6 +19,7 @@ export function middleware(req: NextRequest) {
     currentHost === 'blmservicos.com.br' || 
     currentHost === 'www' || 
     currentHost === 'painel' ||
+    currentHost.startsWith('portal-recupera') ||
     currentHost === hostname
   ) {
     return NextResponse.next();

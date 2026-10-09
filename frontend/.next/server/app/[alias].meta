@@ -1,0 +1,36 @@
+{
+  "status": 200,
+  "headers": {
+    "link": "</_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[alias]/layout,_N_T_/[alias]/page"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/$d$alias/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 49216,
+    "slots": {
+      "children": {
+        "hints": 49248,
+        "slots": {
+          "children": {
+            "hints": 49312,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/4695b66c811b8faea7d44bf56e2e14438735e804c02850d8e74d2fb830dc48d1/$/[alias]",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/[alias]/page"
+    },
+    "isFallback": true
+  }
+}
